@@ -1,0 +1,5 @@
+0. python3 -m vevn env_name #create a new env
+1. source env_name/bin/activate #Activate virtual env_name
+2. deactivate # Deactivate virtual env
+3. pip3 freeze > requirments.txt # saves into a txt file the depencies needed for the project
+4. pip3 install -r requirments.txt #Installs specific depencies from requirments file
