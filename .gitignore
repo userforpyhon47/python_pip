@@ -1,5 +1,15 @@
-# Created by https://www.toptal.com/developers/gitignore/api/windows,macos,linux,python
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,linux,python
+# Created by https://www.toptal.com/developers/gitignore/api/database,python,virtualenv,windows,linux,macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=database,python,virtualenv,windows,linux,macos
+
+### Database ###
+*.accdb
+*.db
+*.dbf
+*.mdb
+*.pdb
+*.sqlite3
+*.db-shm
+*.db-wal
 
 ### Linux ###
 *~
@@ -221,6 +231,18 @@ poetry.toml
 # LSP config files
 pyrightconfig.json
 
+### VirtualEnv ###
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+pip-selfcheck.json
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -247,7 +269,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,python
-
-# Images
-*.png
+# End of https://www.toptal.com/developers/gitignore/api/database,python,virtualenv,windows,linux,macos

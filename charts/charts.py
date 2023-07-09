@@ -1,7 +1,12 @@
-import matplotlib.pyplot as plt
+from fastapi import FastAPI
 
-plt.bar([1,2,3], [1,2,3])
+app = FastAPI()
+CSV_FILE = "data.csv"
 
-plt.savefig("test.png")
+@app.get("/")
+def get_data():
+    return "This is a test"
 
-plt.close()
+@app.get("/test")
+def get_data2():
+    return "This is a test2"

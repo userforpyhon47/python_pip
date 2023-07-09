@@ -1,0 +1,12 @@
+
+0. python3 -m vevn env_name #create a new env
+1. source env_name/bin/activate #Activate virtual env_name
+2. deactivate # Deactivate virtual env
+3. pip3 freeze > requirments.txt # saves into a txt file the depencies needed for the project
+4. pip3 install -r requirments.txt #Installs specific depencies from requirments file
+5. uvicorn file_name:app --reload & # Launch in BG the fastapi service
+6. docker-compose build #creates container from docker file
+7. docker-compose ps # list status of docker containers
+8. docker-compose up -d # launch container to run
+9. docker-compose down # to stop running docker container
+10. docker-compose exec _name_ bash # to connect with docker container by using bash 

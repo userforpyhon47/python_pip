@@ -1,0 +1,8 @@
+services:
+  web-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/web_request
+

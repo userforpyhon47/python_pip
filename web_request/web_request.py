@@ -9,5 +9,5 @@ try:
 except requests.HTTPError as exc:
     print(f"An error was encountered {exc}")
 else:
-    with open("response.json", "w") as file:
+    with open("response_02.json", "w") as file:
         json.dump(response.json(), file, indent=4)
