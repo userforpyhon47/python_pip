@@ -1,0 +1,13 @@
+- django-admin startproject project_name
+- python manage.py startapp app_name
+- python3 manage.py makemigrations app_name # Describe tables from models
+- python3 manage.py migrate # Run SQL to database
+- python3 manage.py shell # Starts django shell
+- Questions.objects.all() # Returns QuerySet intances of Questions
+- q = Question(**kargs) # Creates new instance of the class
+- q.save() # Save data to the database
+- from django.utils import timezone # Import built-in timezone module from django
+- Question.objects.filter(question_text__istartswith="dummy") # filter data by using the objects of the class
+- q.choice_set.all() # Only in one to many we can access child record from parent record in this one
+- Choice.question__set.create(choice_text="Dummy choice", votes=0)
+- python3 manage.py createsuperuser # creates admin credetials

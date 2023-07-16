@@ -9,7 +9,7 @@ class MovieService():
 
     def get_movies(self):
         return self.db.query(Movie).all()
-    
+        
     def get_movie(self, id):
         return self.db.query(Movie).filter(Movie.id==id).first()
     
@@ -27,7 +27,7 @@ class MovieService():
     def delete_movie(self, id):
        movie_instance = self.db.query(Movie).filter(Movie.id==id).first()
        if not movie_instance:
-           return Exception(f"movie by id {id}")
+           return False
        self.db.delete(movie_instance)
        self.db.commit()
 

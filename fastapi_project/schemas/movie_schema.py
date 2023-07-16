@@ -1,10 +1,6 @@
 from pydantic import BaseModel, Field
 
-class User(BaseModel):
-    username: str 
-    passwd: str
-
-class MovieItem(BaseModel):
+class MovieSchema(BaseModel):
     id: int = Field(default=0)
     title: str = Field(min_length=5, max_length=30, default="Movie title here")
     overview: str = Field(min_length=5, max_length=120, default="Movie overview here")

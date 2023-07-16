@@ -7,7 +7,7 @@ import env_manager as em
 from jwt_manager import create_token
 
 # import database connection
-from models.base_model import User
+from schemas.user_schema import User
 
 # bult-in import
 import os
