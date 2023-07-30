@@ -1,12 +1,21 @@
+from typing import Any
+from django.db import models
+from django.db.models.query import QuerySet
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.http import HttpResponse
 from django.urls import reverse
 from .models import Question, Choice
 from django.views.generic import ListView, DetailView
+from django.utils import timezone
+
 
 class IndexView(ListView):
     model = Question
     template_name = "polls/index.html"
+
+    def get_queryset(self) -> QuerySet[Any]:
+        current_time = timezone.now()
+        return Question.objects.filter(pub_date__lte=current_time).order_by("-pub_date")[:5]
 
 # def index(request):
 #     question_list = Question.objects.all()
@@ -16,6 +25,9 @@ class IndexView(ListView):
 class DetailsView(DetailView):
     model = Question
     template_name = "polls/detail.html"
+
+    def get_queryset(self) -> QuerySet[Any]:
+        return Question.objects.filter(pub_date__lte=timezone.now())
 
 # def detail(request, question_id):
 #     try:

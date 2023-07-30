@@ -1,3 +1,7 @@
+
+{% extends "polls/base.html" %}
+
+{% block body %}
 {% if question_list %}
     {% for question in question_list  %}
         <ul>
@@ -9,3 +13,5 @@
 {% else %}
     <p> No questions available </p>
 {% endif %}
+
+{% endblock %}
