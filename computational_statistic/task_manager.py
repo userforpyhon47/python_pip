@@ -37,25 +37,37 @@ def createTaskPlanner():
          
         task = searchTask(value)
         if task:
+            #Si el resultado de la búsqueda contiene un elemento, actualizamos su valor de la llave update
             task[0]["completed"] = True
             return True
         return False
     
     def getSortedTasksByPriority():
+        """Utilizamos la función sorted donde su parámetro key es una función lambda que recibe cada argumento x
+        de la lista task_list y de ese argumento accede a la llave priority para realizar el ordenamiento"""
+
         return sorted(task_list, key = lambda x: x['priority'])
     
     def filterTasksByTag(tag):
         return [task for task in task_list if tag in task.get("tags")]
     
     def updateTask(taskId, updates):
+        """Buscamos la tarea, como es una lista debemos siempre acceder al primer elemento de la misma
+        partiendo de la suposición que las tareas son únicas"""
         task = searchTask(taskId)
         if task:
+            #Si el resultado de la búsqueda contiene un elemento, encontramos cuál es su indice en la lista de tareas
             index = task_list.index(task[0])
+            #Borramos la tarea de la lista de tareas
             task_list.pop(index)
+            #Insertamos nuevamente la tarea con las actualizaciones correspondientes en su posición original
             task_list.insert(index, {**task[0], **updates})
             return True
         return False
     
+    """Retornamos en un diccionario la llave: valor de las funciones que luego podemos acceder de este closure 
+    mediante createTaskPlanner()["llave_funcion"](*args) """
+
     return {"addTask": addTask,
             "removeTask": removeTask,
             "getTasks": getTasks,
